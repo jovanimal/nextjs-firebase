@@ -1,21 +1,11 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useContext } from 'react';
-// import { UserContext } from '@lib/context';
+import { UserContext } from '../lib/context';
 // import { auth } from '@lib/firebase';
 
 // Top navbar
 export default function Navbar() {
-  const user = true;
-  const username = true;
-  // const { user, username } = useContext(UserContext);
-
-  // const router = useRouter();
-
-  // const signOut =  () => {
-  //   auth.signOut();
-  //   router.reload();
-  // }
+  const { user, username } = useContext(UserContext);
 
   return (
     <nav className="navbar">
