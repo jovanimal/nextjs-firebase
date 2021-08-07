@@ -29,6 +29,14 @@ function PostManager() {
   const postRef = firestore.collection('users').doc(auth.currentUser.uid).collection('posts').doc(typeof slug === 'string' && slug);
   const [post] = useDocumentDataOnce(postRef);
 
+  const handleLiveView = () => {
+    const doIt = confirm('Did you save the changes for your edited post?');
+    if (doIt) {
+      router.push(`/${post.username}/${post.slug}`);
+    }
+  };
+
+
   return (
     <main className={styles.container}>
       {post && (
@@ -43,9 +51,7 @@ function PostManager() {
           <aside>
             <h3>Tools</h3>
             <button onClick={() => setPreview(!preview)}>{preview ? 'Edit' : 'Preview'}</button>
-            <Link href={`/${post.username}/${post.slug}`}>
-              <button className="btn-blue">Live view</button>
-            </Link>
+            <button className="btn-blue" onClick={handleLiveView}>Live view</button>
             <DeletePostButton postRef={postRef} />
           </aside>
         </>
@@ -110,11 +116,11 @@ function DeletePostButton({ postRef }) {
   const router = useRouter();
 
   const deletePost = async () => {
-    const doIt = confirm('are you sure!');
+    const doIt = confirm('Are you sure you want to delete this post?');
     if (doIt) {
       await postRef.delete();
       router.push('/admin');
-      toast('post annihilated ', { icon: '🗑️' });
+      toast('Post annihilated!', { icon: '🗑️' });
     }
   };
 

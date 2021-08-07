@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { UserContext } from '../../lib/context';
@@ -66,6 +66,9 @@ export default function Post(props) {
       
       <section>
         <PostContent post={post} />
+        <Link href="/admin">
+          <button>Back</button>
+        </Link>
       </section>
 
       <aside className="card">

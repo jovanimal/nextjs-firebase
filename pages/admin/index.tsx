@@ -76,11 +76,11 @@ function CreateNewPost() {
   };
 
   return (
-    <form onSubmit={createPost}>
+    <form onSubmit={createPost} className="create-article-form">
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder="My Awesome Article!"
+        placeholder="Insert your new article's title here"
         className={styles.input}
       />
       <p>
