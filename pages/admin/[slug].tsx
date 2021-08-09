@@ -36,7 +36,6 @@ function PostManager() {
     }
   };
 
-
   return (
     <main className={styles.container}>
       {post && (
