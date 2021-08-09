@@ -53,6 +53,8 @@ export async function getStaticPaths() {
 }
 
 export default function Post(props) {
+  const { username } = useContext(UserContext);
+
   const postRef = firestore.doc(props.path);
   const [realtimePost] = useDocumentData(postRef);
 
@@ -66,9 +68,14 @@ export default function Post(props) {
       
       <section>
         <PostContent post={post} />
-        <Link href="/admin">
-          <button>Back</button>
+        <Link href="/">
+          <button>Back to Home</button>
         </Link>
+        {username && (
+           <Link href="/admin">
+            <button>Back to Admin</button>
+          </Link>
+        )}
       </section>
 
       <aside className="card">
