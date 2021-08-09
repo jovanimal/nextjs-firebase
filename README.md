@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# J. Blog (Blogging Platform)
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). This is a blogging platform where authors can create content under their custom username, then publish publicly with SEO-friendly rendering, while readers can heart or like posts in realtime. Authors can log in using their google account. This project is created by using Next.js and Firebase.
+
+The UI might not be perfect at the moment though it can be improved for better user experience and more user-friendly, this serves as an MVP to test the features.
+
+### [View the demo here](https://nextjs-firebase-iota.vercel.app/)
+
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/54385240/128656195-c5f09b9b-7b0c-4ce7-a672-90aeeaa25e50.gif)
+
 
 ## Getting Started
 
